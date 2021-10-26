@@ -186,6 +186,11 @@ header ul li a
     outline: none;
 }
 
+.modal.active
+{
+    display: block;
+}
+
 .modal
 {
     display: none;
@@ -262,6 +267,73 @@ header ul li a
     font-size: 25px;
     line-height: 34px;
     color: #000000;
+}
+
+.alerta
+{
+    width: 100%;
+    max-width: 1150px;
+    padding: 10px 15px;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    filter: drop-shadow(15px 10px 10px rgba(0, 0, 0, 0.5));
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.alerta p
+{
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 56px;
+    text-align: center;
+    color: #FFFFFF;
+    background: transparent;
+}
+
+.alerta img
+{
+    background: transparent;
+    cursor: pointer;
+    width: 40px;
+}
+
+.alerta-sucesso
+{
+    background: #10B164;
+}
+
+.alerta-erro
+{
+    background: #971010;
+}
+
+.alerta-atencao
+{
+    background: #FBC02D;
+}
+
+.alerta-validacao
+{
+    display: none;
+    background: #FBC02D;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 /* Formatação Geral */
@@ -405,7 +477,7 @@ header ul li a
     font-size: 20px;
 }
 
-#pagina-container .celula-pesquisa a
+#pagina-container .celula-pesquisa button
 {
     width: 128px;
     padding: 10px;
@@ -613,7 +685,7 @@ header ul li a
 
 
 
-/* pagina-container */
+/* pagina-movimentacao */
 
 #pagina-movimentacao .celula-titulo
 {
@@ -676,7 +748,7 @@ header ul li a
     font-size: 20px;
 }
 
-#pagina-movimentacao .celula-pesquisa a
+#pagina-movimentacao .celula-pesquisa button
 {
     width: 128px;
     padding: 10px;
@@ -795,6 +867,7 @@ header ul li a
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 #pagina-movimentacao-cadastro .celula-metade
@@ -916,6 +989,12 @@ header ul li a
         font-size: 22px;
     }
 
+    .alerta 
+    {
+        max-width: 802px;
+    }
+
+
     /* Formatação geral */
 }
 @media screen and (max-width: 1152px) 
@@ -955,6 +1034,18 @@ header ul li a
         z-index: 10;
     }
 
+    .celula-botao .botao-cancelar 
+    {
+        width: 200px;
+        font-size: 25px;
+    }
+
+    .celula-botao .botao-continua 
+    {
+        width: 200px;
+        font-size: 25px;
+    }
+
     .modal
     {
         width: 600px;
@@ -969,18 +1060,6 @@ header ul li a
     .modal .celula-botao
     {
         margin-top: 20px;
-    }
-
-    .modal .celula-botao .botao-cancelar 
-    {
-        width: 200px;
-        font-size: 25px;
-    }
-
-    .celula-botao .botao-continua 
-    {
-        width: 200px;
-        font-size: 25px;
     }
 
     /* Formatação geral */
@@ -1011,6 +1090,20 @@ header ul li a
 @media screen and (max-width: 1024px) {}
 @media screen and (max-width: 992px) 
 {
+    /* Formatação Geral */
+
+    .alerta p 
+    {
+        font-size: 20px;
+    }
+
+    .alerta 
+    {
+        max-width: 582px;
+    }
+
+    /* Formatação Geral */
+
     /* pagina-container */
 
     #pagina-container table td 
@@ -1069,6 +1162,22 @@ header ul li a
         height: auto;
         padding: 20px;
         box-sizing: border-box;
+    }
+
+    .alerta p 
+    {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .alerta 
+    {
+        max-width: 380px;
+    }
+
+    .alerta img 
+    {
+        width: 20px;
     }
 
     /* Formatação geral */
@@ -1344,7 +1453,7 @@ header ul li a
         font-size: 18px;
     }
 
-    #pagina-container .celula-pesquisa a 
+    #pagina-container .celula-pesquisa button 
     {
         width: 115px;
         font-size: 18px;
@@ -1370,7 +1479,7 @@ header ul li a
         font-size: 18px;
     }
 
-    #pagina-movimentacao .celula-pesquisa a 
+    #pagina-movimentacao .celula-pesquisa button 
     {
         width: 115px;
         font-size: 18px;
@@ -1427,6 +1536,25 @@ header ul li a
         font-size: 17px;
     }
 
+    .alerta
+    {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        width: 270px;
+    }
+
+    .alerta img 
+    {
+        order: 1;
+    }
+
+    .alerta p 
+    {
+        order: 2;
+        line-height: 22px;
+    }
+
     /* Formatação geral */
 
 }
@@ -1454,6 +1582,11 @@ header ul li a
     {
         width: 20px;
         z-index: 10;
+    }
+
+    .alerta 
+    {
+        max-width: 260px;
     }
 
     /* Formatação geral */

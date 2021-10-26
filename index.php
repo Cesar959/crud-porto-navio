@@ -1,3 +1,14 @@
+<?php 
+    require_once "autoload.php";
+
+
+    $container = new Painel();
+    $quantidadeContainer = $container->contagemContainer();
+
+    $movimentacao = new Painel();
+    $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,34 +18,28 @@
     <title>Crud - Container</title>
 
     <!-- Estilo personalizado -->
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="resource/css/estilo.css">
 
 </head>
 <body id="pagina-inicial" class="fundo">
 
     <div class="container">
 
-        <header id="menu-lateral">
-            <ul>
-                <li><a href="index.html">PAINEL</a></li>
-                <li><a href="container.html">CONTAINER</a></li>
-                <li><a href="movimentacao.html">MOVIMENTAÇÃO</a></li>
-            </ul>
-        </header>
+        <?php include_once "include/menu.php" ?>
 
         <section class="painel">
 
-            <img src="img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
 
             <div class="conteudo-painel">
                 <div class="grupo-card">
                     <div class="card">
                         <h2>CONTAINERS</h2>
-                        <span>15</span>
+                        <span><?php echo $quantidadeContainer; ?></span>
                     </div>
                     <div class="card">
                         <h2>MOVIMENTAÇÃO</h2>
-                        <span>25</span>
+                        <span><?php echo $quantidadeMovimentacao; ?></span>
                     </div>
                 </div>
     
@@ -55,7 +60,7 @@
 
 
     <!-- Script Personalizado -->
-    <script src="js/main.js"></script>
+    <script src="resource/js/main.js"></script>
 
 </body>
 </html>
