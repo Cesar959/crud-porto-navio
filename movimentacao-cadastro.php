@@ -1,37 +1,39 @@
 <?php 
 
-    require_once "autoload.php";
+require_once "vendor/autoload.php";
 
-    if(isset($_POST['cadastro']))
+use Controler\Movimentacao;
+
+if(isset($_POST['cadastro']))
+{
+    // Efetuando a limpea das informações enviadas
+    $tipoMovimentacao = filter_input(INPUT_POST,"tipoMovimentacao", FILTER_SANITIZE_STRING );
+    $data_inicio = filter_input(INPUT_POST,"data_inicio", FILTER_SANITIZE_STRING );
+    $hora_inicio = filter_input(INPUT_POST,"hora_inicio", FILTER_SANITIZE_STRING );
+    $data_fim = filter_input(INPUT_POST,"data_fim", FILTER_SANITIZE_STRING);
+    $hora_fim = filter_input(INPUT_POST,"hora_fim", FILTER_SANITIZE_STRING );
+
+    if($tipoMovimentacao == "" OR $data_inicio == "" OR $hora_inicio == "" OR $data_fim == "" OR $hora_fim == "")
     {
-        // Efetuando a limpea das informações enviadas
-        $tipoMovimentacao = filter_input(INPUT_POST,"tipoMovimentacao", FILTER_SANITIZE_STRING );
-        $data_inicio = filter_input(INPUT_POST,"data_inicio", FILTER_SANITIZE_STRING );
-        $hora_inicio = filter_input(INPUT_POST,"hora_inicio", FILTER_SANITIZE_STRING );
-        $data_fim = filter_input(INPUT_POST,"data_fim", FILTER_SANITIZE_STRING);
-        $hora_fim = filter_input(INPUT_POST,"hora_fim", FILTER_SANITIZE_STRING );
-
-        if($tipoMovimentacao == "" OR $data_inicio == "" OR $hora_inicio == "" OR $data_fim == "" OR $hora_fim == "")
-        {
-            header("Location: movimentacao-cadastro.php?alerta=on");
-        }
-        else
-        {
-            // Instanciando a class livro
-            $cadastro = new Movimentacao();
-
-            // Setando os atributos
-            $cadastro->__set("tipoMovimentacao",$tipoMovimentacao);
-            $cadastro->__set("dataInicio",$data_inicio);
-            $cadastro->__set("horaInicio",$hora_inicio);
-            $cadastro->__set("dataFim",$data_fim);
-            $cadastro->__set("horaFim",$hora_fim);
-        
-            // Executando o método cadastro
-            $cadastro->cadastro();
-        }
-
+        header("Location: movimentacao-cadastro.php?alerta=on");
     }
+    else
+    {
+        // Instanciando a class livro
+        $cadastro = new Movimentacao();
+
+        // Setando os atributos
+        $cadastro->__set("tipoMovimentacao",$tipoMovimentacao);
+        $cadastro->__set("dataInicio",$data_inicio);
+        $cadastro->__set("horaInicio",$hora_inicio);
+        $cadastro->__set("dataFim",$data_fim);
+        $cadastro->__set("horaFim",$hora_fim);
+    
+        // Executando o método cadastro
+        $cadastro->cadastro();
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

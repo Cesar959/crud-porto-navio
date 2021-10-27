@@ -1,5 +1,9 @@
 <?php
 
+namespace Controler;
+
+use Model\Sql;
+
 class Movimentacao
 {
     // atributos

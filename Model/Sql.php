@@ -1,9 +1,11 @@
 <?php
 
+namespace Model;
+
 include_once "config.php";
 
 
-class Sql extends PDO
+class Sql extends \PDO
 {
     private $host = HOST;
     private $banco = BANCO;
@@ -14,7 +16,7 @@ class Sql extends PDO
 
     public function __construct()
     {
-        $this->conexao = new PDO("mysql:host=$this->host;dbname=$this->banco", "$this->usuario", "$this->senha");
+        $this->conexao = new \PDO("mysql:host=$this->host;dbname=$this->banco", "$this->usuario", "$this->senha");
     }
 
     public function executaComando($sql, $parametros = array())
@@ -49,7 +51,7 @@ class Sql extends PDO
 
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
     }
 

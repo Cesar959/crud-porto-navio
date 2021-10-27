@@ -1,39 +1,42 @@
 <?php 
-    require_once "autoload.php";
 
-    $busca = filter_input(INPUT_GET, "busca", FILTER_SANITIZE_STRING);
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STRING);
+require_once "vendor/autoload.php";
 
-    $pagina = ($pagina == 0)? 1: $pagina;
-    $limite = 10;
+use Controler\Movimentacao;
 
-    if(!empty($busca))
-    {
-        $movimentacao = new Movimentacao();
-        $dados_movimentacao = $movimentacao->busca($busca, $pagina, $limite);
-        $linhas = count($dados_movimentacao[0]);
-    }
-    else
-    {
-        $movimentacao = new Movimentacao();
-        $dados_movimentacao = $movimentacao->ler($pagina, $limite);
-        $linhas = count($dados_movimentacao[0]);
-    }
+$busca = filter_input(INPUT_GET, "busca", FILTER_SANITIZE_STRING);
+$pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STRING);
 
-    // Script de Exclusão
+$pagina = ($pagina == 0)? 1: $pagina;
+$limite = 10;
 
-    if(isset($_GET['id']))
-    {
-        // pagando o id por url
-        $id_parametro = base64_decode($_GET['id']);
-        $id = filter_var($id_parametro,  FILTER_SANITIZE_NUMBER_INT);
+if(!empty($busca))
+{
+    $movimentacao = new Movimentacao();
+    $dados_movimentacao = $movimentacao->busca($busca, $pagina, $limite);
+    $linhas = count($dados_movimentacao[0]);
+}
+else
+{
+    $movimentacao = new Movimentacao();
+    $dados_movimentacao = $movimentacao->ler($pagina, $limite);
+    $linhas = count($dados_movimentacao[0]);
+}
 
-        // Instanciando a class livro
-        $remocao = new Movimentacao();
-        // Executando o metodo deletar()
-        $remocao->deletar($id);
-        print_r($remocao);
-    }
+// Script de Exclusão
+
+if(isset($_GET['id']))
+{
+    // pagando o id por url
+    $id_parametro = base64_decode($_GET['id']);
+    $id = filter_var($id_parametro,  FILTER_SANITIZE_NUMBER_INT);
+
+    // Instanciando a class livro
+    $remocao = new Movimentacao();
+    // Executando o metodo deletar()
+    $remocao->deletar($id);
+    print_r($remocao);
+}
 
 ?>
 <!DOCTYPE html>

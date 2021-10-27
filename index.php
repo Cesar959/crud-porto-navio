@@ -1,12 +1,14 @@
-<?php 
-    require_once "autoload.php";
+<?php
 
+require_once __DIR__ . "/vendor/autoload.php";
 
-    $container = new Painel();
-    $quantidadeContainer = $container->contagemContainer();
+use Controler\Painel;
 
-    $movimentacao = new Painel();
-    $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
+$container = new Painel();
+$quantidadeContainer = $container->contagemContainer();
+
+$movimentacao = new Painel();
+$quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
 
 ?>
 <!DOCTYPE html>

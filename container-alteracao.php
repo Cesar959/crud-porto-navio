@@ -1,7 +1,8 @@
 <?php 
 
-require_once "autoload.php";
+require_once "vendor/autoload.php";
 
+use Controler\Container;
 
 // Trazendo as informações baseado no id
 

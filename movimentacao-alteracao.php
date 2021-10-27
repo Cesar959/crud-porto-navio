@@ -1,6 +1,8 @@
 <?php 
 
-require_once "autoload.php";
+require_once "vendor/autoload.php";
+
+use Controler\Movimentacao;
 
 // Trazendo as informações baseado no id
 

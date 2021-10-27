@@ -1,36 +1,39 @@
 <?php 
-    require_once "autoload.php";
 
-    if(isset($_POST['cadastro']))
+require_once "vendor/autoload.php";
+
+use Controler\Container;
+
+if(isset($_POST['cadastro']))
+{
+    // Efetuando a limpea das informações enviadas
+    $cliente = filter_input(INPUT_POST,"cliente", FILTER_SANITIZE_STRING );
+    $numeroContainer = filter_input(INPUT_POST,"numeroContainer", FILTER_SANITIZE_STRING );
+    $tipo = filter_input(INPUT_POST,"tipo", FILTER_SANITIZE_STRING );
+    $status = filter_input(INPUT_POST,"status", FILTER_SANITIZE_STRING);
+    $categoria = filter_input(INPUT_POST,"categoria", FILTER_SANITIZE_STRING );
+
+    if($cliente == "" OR $numeroContainer == "" OR $tipo == "" OR $status == "" OR $categoria == "")
     {
-        // Efetuando a limpea das informações enviadas
-        $cliente = filter_input(INPUT_POST,"cliente", FILTER_SANITIZE_STRING );
-        $numeroContainer = filter_input(INPUT_POST,"numeroContainer", FILTER_SANITIZE_STRING );
-        $tipo = filter_input(INPUT_POST,"tipo", FILTER_SANITIZE_STRING );
-        $status = filter_input(INPUT_POST,"status", FILTER_SANITIZE_STRING);
-        $categoria = filter_input(INPUT_POST,"categoria", FILTER_SANITIZE_STRING );
-
-        if($cliente == "" OR $numeroContainer == "" OR $tipo == "" OR $status == "" OR $categoria == "")
-        {
-            header("Location: container-cadastro.php?alerta=on");
-        }
-        else
-        {
-            // Instanciando a class livro
-            $cadastro = new Container();
-
-            // Setando os atributos
-            $cadastro->__set("cliente",$cliente);
-            $cadastro->__set("numeroContainer",$numeroContainer);
-            $cadastro->__set("tipo",$tipo);
-            $cadastro->__set("status",$status);
-            $cadastro->__set("categoria",$categoria);
-        
-            // Executando o método cadastro
-            $cadastro->cadastro();
-        }
-
+        header("Location: container-cadastro.php?alerta=on");
     }
+    else
+    {
+        // Instanciando a class livro
+        $cadastro = new Container();
+
+        // Setando os atributos
+        $cadastro->__set("cliente",$cliente);
+        $cadastro->__set("numeroContainer",$numeroContainer);
+        $cadastro->__set("tipo",$tipo);
+        $cadastro->__set("status",$status);
+        $cadastro->__set("categoria",$categoria);
+    
+        // Executando o método cadastro
+        $cadastro->cadastro();
+    }
+
+}
 
 ?>
 <!DOCTYPE html>
