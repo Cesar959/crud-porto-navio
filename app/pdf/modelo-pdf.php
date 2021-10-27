@@ -1,10 +1,13 @@
 <?php
 
+// Incluindo o autoload
 require_once '../../vendor/autoload.php';
 
+// Informando as class que serão usadas
 use Controler\Painel;
 use Controler\Pdf;
 
+// instanciando a class
 $pdf = new Pdf;
 $dados_container = $pdf->Container();
 $linha_container = count($dados_container);
@@ -12,11 +15,14 @@ $linha_container = count($dados_container);
 $dados_movimentacao = $pdf->Movimentacao();
 $linha_movimentacao = count($dados_movimentacao);
 
+// instanciando a class
 $resumo = new Painel;
 $quantidade_container = $resumo->contagemContainer();
 $quantidade_movimentacao = $resumo->contagemMovimentacao();
 
 ?>
+
+<!-- Modelo do PDF de Relatorio -->
 
 <!DOCTYPE html>
 <html lang="pt-br">

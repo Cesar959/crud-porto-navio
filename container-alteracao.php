@@ -1,7 +1,10 @@
 <?php 
 
+
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamando a class que sera usada
 use Controler\Container;
 
 // Trazendo as informações baseado no id

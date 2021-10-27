@@ -1,9 +1,12 @@
 <?php
 
+// Incluindo o autoload
 require_once __DIR__ . "/vendor/autoload.php";
 
+// Chamndo a class que sera utilizada
 use Controler\Painel;
 
+// Instanciando as class
 $container = new Painel();
 $quantidadeContainer = $container->contagemContainer();
 

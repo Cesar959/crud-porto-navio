@@ -1,9 +1,12 @@
 <?php 
 
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamndo a class que sera utilizada
 use Controler\Movimentacao;
 
+// Verificando ser foi enviado o formulario
 if(isset($_POST['cadastro']))
 {
     // Efetuando a limpea das informações enviadas

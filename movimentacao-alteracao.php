@@ -1,7 +1,9 @@
 <?php 
 
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamndo a class que sera utilizada
 use Controler\Movimentacao;
 
 // Trazendo as informações baseado no id

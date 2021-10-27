@@ -1,15 +1,20 @@
 <?php 
 
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamando a class que sera utilizada
 use Controler\Container;
 
+// Limpando os dados Enviados
 $busca = filter_input(INPUT_GET, "busca", FILTER_SANITIZE_STRING);
 $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STRING);
 
+// Conferindo os valores recebidos e inicio a paginação
 $pagina = ($pagina == 0)? 1: $pagina;
 $limite = 10;
 
+// Verificando ser é busca ou listagem simples
 if(!empty($busca))
 {
     $container = new Container();
@@ -159,6 +164,7 @@ if(isset($_GET['id']))
 
                             for ($i=0; $i < $linhas; $i++) 
                             { 
+                                // imprimindo as informações
                                 $idContainer = $dados_containe[0][$i]['id_container'];
                                 $cliente = $dados_containe[0][$i]['cliente'];
                                 $numeroContainer = $dados_containe[0][$i]['numero_container'];
@@ -189,14 +195,21 @@ if(isset($_GET['id']))
 
                 <?php  
 
+                // Paginação
+
+                // contidade de paginas
                 $contidade =  $dados_containe[1]; 
 
+                // Descobrindo a contidade de listagens de registros
                 $total_paginas = ceil($contidade/$limite);
 
+                // verificando ser apginação não é 0
                 if($total_paginas == 0)
                 {
                     $total_paginas = 1;
                 }
+
+                 // Criando os botôes 
 
                 if(($pagina - 1) <= 0)
                 {
@@ -219,6 +232,7 @@ if(isset($_GET['id']))
 
                 ?>
 
+                <!-- Exibindo a paginações  -->
                 <?php if(!empty($busca)) { ?>
                 <div class="paginacao">
                     <a href="<?php echo 'container.php?busca=' . $busca . '&pagina=' . $anterior ; ?>"><i class='bx bx-left-arrow-alt'></i></a>

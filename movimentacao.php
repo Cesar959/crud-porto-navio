@@ -1,14 +1,22 @@
 <?php 
 
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamando a class que sera usada
 use Controler\Movimentacao;
 
+
+// Limpando os dados 
 $busca = filter_input(INPUT_GET, "busca", FILTER_SANITIZE_STRING);
 $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_STRING);
 
+// Conferindo os valores recebidos e inicio a paginação
+
 $pagina = ($pagina == 0)? 1: $pagina;
 $limite = 10;
+
+// Verificando ser é busca ou listagem simples
 
 if(!empty($busca))
 {
@@ -153,6 +161,7 @@ if(isset($_GET['id']))
 
                             for ($i=0; $i < $linhas; $i++) 
                             { 
+                                // imprimindo as informações
                                 $idMovimentacao = $dados_movimentacao[0][$i]['id_movimentacao'];
                                 $tipoMovimentacao = $dados_movimentacao[0][$i]['tipo_movimentacao'];
                                 $dataInicio = $dados_movimentacao[0][$i]['data_inicio'];
@@ -177,15 +186,22 @@ if(isset($_GET['id']))
                 </table>
 
                 <?php  
+
+                // Paginação
                 
+                // contidade de paginas
                 $contidade =  $dados_movimentacao[1]; 
 
+                // Descobrindo a contidade de listagens de registros
                 $total_paginas = ceil($contidade/$limite);
 
+                // verificando ser apginação não é 0
                 if($total_paginas == 0)
                 {
                     $total_paginas = 1;
                 }
+
+                // Criando os botôes 
 
                 if(($pagina - 1) <= 0)
                 {
@@ -208,6 +224,7 @@ if(isset($_GET['id']))
 
                 ?>
 
+                <!-- Exibindo a paginações  -->
                 <?php if(!empty($busca)) { ?>
                     <div class="paginacao">
                         <a href="<?php echo 'movimentacao.php?busca=' . $busca . '&pagina=' . $anterior ; ?>"><i class='bx bx-left-arrow-alt'></i></a>

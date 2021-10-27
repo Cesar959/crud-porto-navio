@@ -1,8 +1,12 @@
 <?php 
 
+// Incluindo o autoload
 require_once "vendor/autoload.php";
 
+// Chamando a class que sera utilizada
 use Controler\Container;
+
+// Verificando ser foi enviado o formulario
 
 if(isset($_POST['cadastro']))
 {
