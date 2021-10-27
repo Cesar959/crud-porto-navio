@@ -585,6 +585,11 @@ header ul li a
     margin-bottom: 20px;
 }
 
+#pagina-container-cadastro input[name="numeroContainer"]
+{
+    text-transform: uppercase;
+}
+
 #pagina-container-cadastro .celula-total
 {
     width: 100%;
@@ -656,6 +661,11 @@ header ul li a
     outline: none;
     border: none;
     margin-bottom: 20px;
+}
+
+#pagina-container-alteracao input[name="numeroContainer"]
+{
+    text-transform: uppercase;
 }
 
 #pagina-container-alteracao .celula-total

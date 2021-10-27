@@ -24,7 +24,7 @@ if(isset($_POST['cadastro']))
 
         // Setando os atributos
         $cadastro->__set("cliente",$cliente);
-        $cadastro->__set("numeroContainer",$numeroContainer);
+        $cadastro->__set("numeroContainer", strtoupper($numeroContainer));
         $cadastro->__set("tipo",$tipo);
         $cadastro->__set("status",$status);
         $cadastro->__set("categoria",$categoria);
@@ -86,7 +86,7 @@ if(isset($_POST['cadastro']))
                     <div class="celula-total-campo">
                         <div class="celula-metade">
                             <label for="numeroContainer">Número do contêiner</label>
-                            <input type="text" name="numeroContainer" id="numeroContainer" placeholder="Ex: TEST1234567" onblur="validacaoCampo('numeroContainer')">
+                            <input type="text" name="numeroContainer" id="numeroContainer" class="numero-container" placeholder="Ex: TEST1234567" onblur="validacaoCampo('numeroContainer')">
                             <div class="alerta-validacao" id="validacao-numeroContainer">
                                 Campo Número do Contêiner é Obrigatorio
                             </div>
@@ -149,6 +149,8 @@ if(isset($_POST['cadastro']))
 
 
     <!-- Script Personalizado -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.2/jquery.mask.min.js" integrity="sha512-Y/GIYsd+LaQm6bGysIClyez2HGCIN1yrs94wUrHoRAD5RSURkqqVQEU6mM51O90hqS80ABFTGtiDpSXd2O05nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="resource/js/main.js"></script>
 
 </body>

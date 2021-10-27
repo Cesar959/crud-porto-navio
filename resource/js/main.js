@@ -39,3 +39,10 @@ function validacaoCampo(campo)
         alerta.style.display = "none"
     }
 }
+
+
+// Mascara de Campo
+$(document).ready(function()
+{
+    $('.numero-container').mask('SSSS0000000');
+});
