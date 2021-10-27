@@ -16,6 +16,16 @@ define("SENHA","");
 define("BASEURL", "http://localhost/crud-container/");
 
 
+// Cinfiguração de Fuso Horario
+date_default_timezone_set('America/Sao_Paulo');
+
+
+// Funções Gerais do projeto
+function data($data){
+    return date("d/m/Y", strtotime($data));
+}
+
+
 
 
 

@@ -188,10 +188,15 @@ if(isset($_GET['id']))
                 </table>
 
                 <?php  
-                
+
                 $contidade =  $dados_containe[1]; 
 
                 $total_paginas = ceil($contidade/$limite);
+
+                if($total_paginas == 0)
+                {
+                    $total_paginas = 1;
+                }
 
                 if(($pagina - 1) <= 0)
                 {
@@ -217,13 +222,13 @@ if(isset($_GET['id']))
                 <?php if(!empty($busca)) { ?>
                 <div class="paginacao">
                     <a href="<?php echo 'container.php?busca=' . $busca . '&pagina=' . $anterior ; ?>"><i class='bx bx-left-arrow-alt'></i></a>
-                    <span><?php echo $pagina; ?></span>
+                    <span><?php echo $pagina . "/" . $total_paginas; ?></span>
                     <a href="<?php echo 'container.php?busca=' . $busca . '&pagina=' . $proximo ; ?>"><i class='bx bx-right-arrow-alt' ></i></a>
                 </div>
                 <?php } else {?>
                     <div class="paginacao">
                     <a href="<?php echo 'container.php?pagina=' . $anterior ; ?>"><i class='bx bx-left-arrow-alt'></i></a>
-                    <span><?php echo $pagina; ?></span>
+                    <span><?php echo $pagina . "/" . $total_paginas; ?></span>
                     <a href="<?php echo 'container.php?pagina=' . $proximo ; ?>"><i class='bx bx-right-arrow-alt' ></i></a>
                 </div>
                 <?php }?>

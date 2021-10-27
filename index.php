@@ -47,7 +47,7 @@ $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
     
     
                 <div class="exportacao">
-                    <button>EXPORTAÇÃO</button>
+                    <a href="<?php echo BASEURL . "/app/pdf/relatorio-painel.php"  ?>"><button>EXPORTAÇÃO</button></a>
                 </div>
             </div>
 

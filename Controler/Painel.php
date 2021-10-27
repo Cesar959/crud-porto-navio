@@ -6,8 +6,6 @@ use Model\Sql;
 
 class Painel
 {
-    // atributos
-
     // Métodos
 
     public function contagemContainer()

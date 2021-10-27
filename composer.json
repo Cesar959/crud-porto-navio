@@ -8,11 +8,14 @@
             "email": "cesarsantosss499@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "dompdf/dompdf": "^1.0"
+    },
     "autoload": {
         "psr-4": {
             "Controler\\": "Controler/", 
             "Model\\": "Model/"
-        }
+        },
+        "files": ["config.php"]
     }
 }

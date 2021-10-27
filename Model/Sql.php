@@ -2,8 +2,6 @@
 
 namespace Model;
 
-include_once "config.php";
-
 
 class Sql extends \PDO
 {
