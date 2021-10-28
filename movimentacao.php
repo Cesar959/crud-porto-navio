@@ -54,6 +54,9 @@ if(isset($_GET['id']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud - Movimentacao</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
+
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
 
@@ -149,7 +152,7 @@ if(isset($_GET['id']))
                 <table>
                     <thead>
                         <tr>
-                            <th>Tipo Container</th>
+                            <th>Tipo Movimentação</th>
                             <th>Data e Hora de Inicio</th>
                             <th>Data e Hora de Fim</th>
                             <th>Opções</th>
@@ -247,7 +250,7 @@ if(isset($_GET['id']))
                 <img src="resource/img/aviso.png" alt="Atenção">
                 <p>Tem certeza que deseja excluir esse container ?</p>
                 <div class="celula-botao">
-                    <a href="movimentacao.html" class="botao-cancelar">cencelar</a>
+                    <a href="movimentacao.php" class="botao-cancelar">cencelar</a>
                     <a class="botao-continua" id="botaoExclusao">remover</a>
                 </div>
             </div>

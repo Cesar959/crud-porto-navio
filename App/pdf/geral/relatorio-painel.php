@@ -15,9 +15,6 @@ $options = new Options();
 $options->set(['enable_remote'=> true]);      
 $dompdf = new Dompdf( $options );
 
-//lendo o arquivo HTML correspondente
-// $html = file_get_contents('modelo-pdf.php');
-
 ob_start();
 require_once "modelo-pdf.php";
 

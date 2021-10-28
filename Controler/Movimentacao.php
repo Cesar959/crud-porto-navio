@@ -55,12 +55,10 @@ class Movimentacao
         if($resposta == true)
         {
             header("Location:movimentacao.php?m=1");
-            exit;
         }
         else
         {
             header('Location:movimentacao.php?m=2');
-            exit;
         }
 
     }
@@ -95,12 +93,10 @@ class Movimentacao
         if($resposta == true)
         {
             header('Location: movimentacao.php?m=3');
-            exit;
         }
         else
         {
             header('Location: movimentacao.php?m=4');
-            exit;
         }
     }
 

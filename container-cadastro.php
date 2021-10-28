@@ -48,6 +48,9 @@ if(isset($_POST['cadastro']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud - Container</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
+
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
 

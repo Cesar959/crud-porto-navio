@@ -56,12 +56,10 @@ class Container
         if($resposta == true)
         {
             header("Location:container.php?m=1");
-            exit;
         }
         else
         {
             header('Location:container.php?m=2');
-            exit;
         }
 
     }
@@ -96,12 +94,10 @@ class Container
         if($resposta == true)
         {
             header('Location:container.php?m=3');
-            exit;
         }
         else
         {
             header('Location: container.php?m=4');
-            exit;
         }
     }
 
