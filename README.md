@@ -26,8 +26,9 @@ O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, l
 * Tipo	de	Movimentaçào	(embarque,	descarga,	gate	in,	gate	out, reposicionamento, pesagem, scanner)
 * Data e Hora do Início
 * Data e Hora do Fim
-* Relatório  com   o   total   de   movimentações   agrupadas   por   cliente   e   tipo  de movimentaçào.
-  * No final do relatório deverá conter um sumário com o total de importaçào / exportação.
+
+### Relatório  com   o   total   de   movimentações   agrupadas   por   cliente   e   tipo  de movimentaçào.
+* No final do relatório deverá conter um sumário com o total de importaçào / exportação.
 
 
 
@@ -96,7 +97,7 @@ Este projeto está licenciado sob a licença MIT - consulte o arquivo  [LICENSE.
 ## Links
 
 * [Layout do Projeto](https://www.figma.com/file/AyqBIHaMYiOi86GXCcPvMq/Crud-de-Porto-de-Navios?node-id=0%3A1) - Link do projeto no figma
-* [Demo do projeto](http://csantosalmeida.rf.gd/index.php) - Link da Demo
+* [Demo do projeto](http://csantosalmeida.rf.gd/crud_porto_navio/) - Link da Demo
 
 
 
