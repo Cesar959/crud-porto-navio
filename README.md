@@ -31,6 +31,20 @@ O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, l
 
 
 
+## Instalação Local
+
+Para executar esse projeto você precisara do  [Composer](https://getcomposer.org/).
+
+Por meio dele sera baixado todas as depedencias do projeto, depois de instalado execute os comandos abaixo na linha do terminal.
+
+1) Para baixa todas as dependencias do projeto
+
+``` composer update ```
+
+2) Efetuar o carregamento automatico das class
+
+``` composer dump-autoload ```
+
 ## Status do Projeto
 
 **Concluido**: O projeto esta terminado, não havera futuras alterações de funcionalidade.
