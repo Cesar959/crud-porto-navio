@@ -46,6 +46,19 @@ Por meio dele sera baixado todas as depedencias do projeto, depois de instalado 
 
 ``` composer dump-autoload ```
 
+3) Edite as configurações padrão do arquivo config.php
+
+``` define("HOST","localhost"); ```
+``` define("BANCO","crud-container"); ```
+``` define("USUARIO","root"); ```
+``` define("SENHA",""); ```
+``` define("BASEURL", "http://localhost/crud-container/"); ```
+
+4) altere a url da imagem do modelo de pdf que pode ser encontrado em App/pdf/geral/modelo-pdf.php
+
+```  <img src="<Dominio>/App/pdf/geral/navio-grande.png" alt="Imagem de Navio Grande"> ```
+
+
 ## Status do Projeto
 
 **Concluido**: O projeto esta terminado, não havera futuras alterações de funcionalidade.
