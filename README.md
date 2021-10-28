@@ -9,7 +9,7 @@ Projeto Crud (Create, Read, Update, Delete) para Porto de Navios.
 
 ## Descrição
 
-O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, ler e excluir registro de Containers e Movimentações no banco de dados. Para isso foi utilizando o PHP para realizar execução de instruções SQL no banco de dados phpMyAdmin, além disso foi utilizado POO (Programação Orientada a Objetos), PDO (PHP Data Object) e DAO (Data Access Object) na construção das class. Na arquitetura do projeto foi utilizado a ideia do MVC (Model View Controller) para que assim as class ficassem separadas permitindo melhor manutenção do código e tambem a utilização do Composer para Geração de PDF e autoload das class. Na pasta DOC você encontra todo o planejamento do projeto como o desenho da modelagem do banco de dados, diagrama UML das class utilizadas e o próprio banco de dados exportado. 
+O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, ler e excluir registro de Containers e Movimentações no banco de dados com exportação de dados via PDF. Para isso foi utilizando o PHP para realizar execução de instruções SQL no banco de dados phpMyAdmin, além disso foi utilizado POO (Programação Orientada a Objetos), PDO (PHP Data Object) e DAO (Data Access Object) na construção das class. Na arquitetura do projeto foi utilizado a ideia do MVC (Model View Controller) para que assim as class ficassem separadas permitindo melhor manutenção do código e tambem a utilização do Composer para Geração de PDF e autoload das class. Na pasta DOC você encontra todo o planejamento do projeto como o desenho da modelagem do banco de dados, diagrama UML das class utilizadas e o próprio banco de dados exportado. 
 
 ## São requisitos funcionais da aplicaçào:
 
