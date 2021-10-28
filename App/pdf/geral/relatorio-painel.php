@@ -1,8 +1,8 @@
 <?php
 
-require_once '../../vendor/autoload.php';
+// Incluindo o autoload
+require_once '../../../vendor/autoload.php';
 
-require_once "../../config.php";
 
 // referenciando o namespace do dompdf
 

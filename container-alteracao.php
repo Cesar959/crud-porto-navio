@@ -16,7 +16,7 @@ $id = filter_var($id_parametro, FILTER_SANITIZE_NUMBER_INT);
 // instanciando a class livro
 $lista = new Container();
 // setando o atributo id da class
-$lista->__set("idContainer", $id);
+$lista->idContainer =  $id;
 //executando o método listaRegistro
 $registro = $lista->listaRegistro();
 
@@ -51,12 +51,12 @@ if(isset($_POST['alterar']))
         $container = new Container();
 
         // Setando os atributos
-        $container->__set("idContainer",$id);
-        $container->__set("cliente",$cliente);
-        $container->__set("numeroContainer", strtoupper($numeroContainer));
-        $container->__set("tipo",$tipo);
-        $container->__set("status",$status);
-        $container->__set("categoria",$categoria);
+        $container->idContainer = $id;
+        $container->cliente = $cliente;
+        $container->numeroContainer = strtoupper($numeroContainer);
+        $container->tipo = $tipo;
+        $container->status = $status;
+        $container->categoria = $categoria;
 
 
         // Executando o método alterar
@@ -88,7 +88,7 @@ if(isset($_POST['alterar']))
         <p>Preencha os Campos do Formulario!</p>
         <img src="resource/img/fecha.svg" onclick="fechaAlerta()" alt="Botão Fecha">
     </div>
-        
+        iopioo
     <?php  } ?>
 
     <div class="container">
@@ -96,7 +96,7 @@ if(isset($_POST['alterar']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 

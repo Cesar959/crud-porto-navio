@@ -15,7 +15,7 @@ $id = filter_var($id_parametro, FILTER_SANITIZE_NUMBER_INT);
 // instanciando a class livro
 $lista = new Movimentacao();
 // setando o atributo id da class
-$lista->__set("idMovimentacao", $id);
+$lista->idMovimentacao = $id;
 //executando o método listaRegistro
 $registro = $lista->listaRegistro();
 
@@ -50,12 +50,12 @@ if(isset($_POST['alterar']))
         $Movimentacao = new Movimentacao();
 
         // Setando os atributos
-        $Movimentacao->__set("idMovimentacao",$id);
-        $Movimentacao->__set("tipoMovimentacao",$tipoMovimentacao);
-        $Movimentacao->__set("dataInicio",$dataInicio);
-        $Movimentacao->__set("horaInicio",$horaIncio);
-        $Movimentacao->__set("dataFim",$dataFim);
-        $Movimentacao->__set("horaFim",$horaFim);
+        $Movimentacao->idMovimentacao = $id;
+        $Movimentacao->tipoMovimentacao = $tipoMovimentacao;
+        $Movimentacao->dataInicio = $dataInicio;
+        $Movimentacao->horaInicio = $horaIncio;
+        $Movimentacao->dataFim = $dataFim;
+        $Movimentacao->horaFim = $horaFim;
 
         // Executando o método alterar
         $Movimentacao->alterar();
@@ -69,7 +69,7 @@ if(isset($_POST['alterar']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud - Container</title>
+    <title>Crud - Movimentacao</title>
 
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
@@ -94,7 +94,7 @@ if(isset($_POST['alterar']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 
@@ -110,8 +110,8 @@ if(isset($_POST['alterar']))
                             <option value="" selected>Selecione ...</option>
                             <option value="embarque" <?php echo $tipoMovimentacao=='embarque'?'selected':'';?>>embarque</option>
                             <option value="descarga" <?php echo $tipoMovimentacao=='descarga'?'selected':'';?>>descarga</option>
-                            <option value="gate	in" <?php echo $tipoMovimentacao=='gate	in'?'selected':'';?>>gate	in</option>
-                            <option value="gate	out" <?php echo $tipoMovimentacao=='gate out'?'selected':'';?>>gate	out</option>
+                            <option value="gate-in" <?php echo $tipoMovimentacao=='gate-in'?'selected':'';?>>gate in</option>
+                            <option value="gate-out" <?php echo $tipoMovimentacao=='gate-out'?'selected':'';?>>gate	out</option>
                             <option value="reposicionamento" <?php echo $tipoMovimentacao=='reposicionamento'?'selected':'';?>>reposicionamento</option>
                             <option value="pesagem" <?php echo $tipoMovimentacao=='pesagem'?'selected':'';?>>pesagem</option>
                             <option value="scanner" <?php echo $tipoMovimentacao=='scanner'?'selected':'';?>>scanner</option>

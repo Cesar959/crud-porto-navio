@@ -41,7 +41,6 @@ if(isset($_GET['id']))
     $remocao = new Container();
     // Executando o metodo deletar()
     $remocao->deletar($id);
-    print_r($remocao);
 }
 
 ?>
@@ -134,7 +133,7 @@ if(isset($_GET['id']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 
@@ -144,7 +143,7 @@ if(isset($_GET['id']))
                 </div>
     
                 <form class="celula-pesquisa" method="GET">
-                    <input type="search" name="busca" value="<?php echo $busca;  ?>" placeholder="Digite a pesquisa ...">
+                    <input type="search" name="busca" value="<?php echo $busca;  ?>" placeholder="Pesquise por cliente ou numero do container...">
                     <button type="submit">pesquisar</button>
                 </form>
     
@@ -253,7 +252,7 @@ if(isset($_GET['id']))
 
             <div class="modal">
                 <h3>ALERTA</h3>
-                <img src="resource/img/aviso.png" alt="">
+                <img src="resource/img/aviso.png" alt="Atenção">
                 <p>Tem certeza que deseja excluir esse container ?</p>
                 <div class="celula-botao">
                     <a href="container.php" class="botao-cancelar">cencelar</a>

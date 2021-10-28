@@ -43,7 +43,6 @@ if(isset($_GET['id']))
     $remocao = new Movimentacao();
     // Executando o metodo deletar()
     $remocao->deletar($id);
-    print_r($remocao);
 }
 
 ?>
@@ -53,7 +52,7 @@ if(isset($_GET['id']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud - Container</title>
+    <title>Crud - Movimentacao</title>
 
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
@@ -133,7 +132,7 @@ if(isset($_GET['id']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 
@@ -143,7 +142,7 @@ if(isset($_GET['id']))
                 </div>
     
                 <form class="celula-pesquisa" method="GET">
-                    <input type="search" name="busca" value="<?php echo $busca;  ?>" placeholder="Digite a pesquisa ...">
+                    <input type="search" name="busca" value="<?php echo $busca;  ?>" placeholder="Pesquise por tipo de movimentação ...">
                     <button type="submit">pesquisar</button>
                 </form>
     
@@ -163,7 +162,7 @@ if(isset($_GET['id']))
                             { 
                                 // imprimindo as informações
                                 $idMovimentacao = $dados_movimentacao[0][$i]['id_movimentacao'];
-                                $tipoMovimentacao = $dados_movimentacao[0][$i]['tipo_movimentacao'];
+                                $tipoMovimentacao = str_replace("-", " ", $dados_movimentacao[0][$i]['tipo_movimentacao']);
                                 $dataInicio = $dados_movimentacao[0][$i]['data_inicio'];
                                 $horaInicio = $dados_movimentacao[0][$i]['hora_inicio'];
                                 $dataFim = $dados_movimentacao[0][$i]['data_fim'];
@@ -245,7 +244,7 @@ if(isset($_GET['id']))
 
             <div class="modal">
                 <h3>ALERTA</h3>
-                <img src="resource/img/aviso.png" alt="">
+                <img src="resource/img/aviso.png" alt="Atenção">
                 <p>Tem certeza que deseja excluir esse container ?</p>
                 <div class="celula-botao">
                     <a href="movimentacao.html" class="botao-cancelar">cencelar</a>

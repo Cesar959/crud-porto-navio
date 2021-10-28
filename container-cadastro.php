@@ -27,11 +27,11 @@ if(isset($_POST['cadastro']))
         $cadastro = new Container();
 
         // Setando os atributos
-        $cadastro->__set("cliente",$cliente);
-        $cadastro->__set("numeroContainer", strtoupper($numeroContainer));
-        $cadastro->__set("tipo",$tipo);
-        $cadastro->__set("status",$status);
-        $cadastro->__set("categoria",$categoria);
+        $cadastro->cliente  = $cliente;
+        $cadastro->numeroContainer = strtoupper($numeroContainer);
+        $cadastro->tipo = $tipo;
+        $cadastro->status = $status;
+        $cadastro->categoria = $categoria;
     
         // Executando o método cadastro
         $cadastro->cadastro();
@@ -71,7 +71,7 @@ if(isset($_POST['cadastro']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 

@@ -45,6 +45,42 @@ class Pdf
 
     }
 
+    // Responsavel por fazer a contagem de Importações
+    public function Importacao()
+    {
+        // Instancia a class
+        $sql = new Sql();
+
+        // No caso em questão não sera feito nem um envio de dados
+        $parametros = array();
+
+        // Executando o comando 'select' responsavel por selecionar  os dados no banco
+        $dados_importacao = $sql->select("SELECT categoria FROM container WHERE categoria = 'Importação';", $parametros);
+        $quantidade_importacao = count($dados_importacao);
+
+        // retornando um valor
+        return $quantidade_importacao;
+
+    }
+
+    // Responsavel por fazer a contagem de Importações
+    public function Exportacao()
+    {
+        // Instancia a class
+        $sql = new Sql();
+
+        // No caso em questão não sera feito nem um envio de dados
+        $parametros = array();
+
+        // Executando o comando 'select' responsavel por selecionar  os dados no banco
+        $dados_exportacao = $sql->select("SELECT categoria FROM container WHERE categoria = 'Exportação';", $parametros);
+        $quantidade_exportacao = count($dados_exportacao);
+
+        // retornando um valor
+        return $quantidade_exportacao;
+
+    }
+
 }
 
 

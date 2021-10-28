@@ -20,7 +20,7 @@ $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud - Container</title>
+    <title>Crud - Porto de Navios</title>
 
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
@@ -34,7 +34,7 @@ $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
 
         <section class="painel">
 
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
                 <div class="grupo-card">
@@ -50,7 +50,7 @@ $quantidadeMovimentacao = $movimentacao->contagemMovimentacao();
     
     
                 <div class="exportacao">
-                    <a href="<?php echo BASEURL . "/app/pdf/relatorio-painel.php"  ?>"><button>EXPORTAÇÃO</button></a>
+                    <a href="<?php echo BASEURL . "App/pdf/geral/relatorio-painel.php"  ?>"><button>EXPORTAÇÃO</button></a>
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 <?php
 
 // Incluindo o autoload
-require_once '../../vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 // Informando as class que serão usadas
 use Controler\Painel;
@@ -14,6 +14,9 @@ $linha_container = count($dados_container);
 
 $dados_movimentacao = $pdf->Movimentacao();
 $linha_movimentacao = count($dados_movimentacao);
+
+$quantidade_importacao = $pdf->Importacao();
+$quantidade_exportacao = $pdf->Exportacao();
 
 // instanciando a class
 $resumo = new Painel;
@@ -30,9 +33,14 @@ $quantidade_movimentacao = $resumo->contagemMovimentacao();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Relatorio Geral</title>
 
     <style>
+
+        h1
+        {
+            font-family: sans-serif;
+        }
 
         .cabecalo
         {
@@ -75,6 +83,51 @@ $quantidade_movimentacao = $resumo->contagemMovimentacao();
             width: 100%;
             font-family: sans-serif;
         }
+
+        .resumo h2
+        {
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        /* cabeçalho */
+        @page 
+        { 
+            margin: 120px 50px 80px 50px; 
+        } 
+
+        #head
+        { 
+            font-size: 20px; 
+            text-align: center; 
+            height: 130px; 
+            width: 100%; 
+            position: fixed; 
+            top: -130px; 
+            left: 0; 
+            right: 0; 
+            margin: auto; 
+        } 
+        #body
+        { 
+            width: 600px; 
+            position: relative; 
+            margin: auto; 
+        } 
+        
+        #footer 
+        { 
+            position: fixed; 
+            bottom: 0;
+            width: 100%;
+            text-align: right;
+            border-top: 1px solid gray; 
+        }
+        
+        #footer .page:after
+        { 
+            content: counter(page); 
+        }
         
     </style>
 </head>
@@ -83,7 +136,7 @@ $quantidade_movimentacao = $resumo->contagemMovimentacao();
 <div class="cabecalo">
     <h1>RELATORIO GERAL</h1>
     <p><?php echo date("d/m/Y H:i:s"); ?></p>
-    <img src="http://localhost/crud-container/app/pdf/navio-grande.png" alt="">
+    <img src="http://localhost/crud-container/App/pdf/geral/navio-grande.png" alt="Imagem de Navio Grande">
 </div>
 
 
@@ -129,23 +182,34 @@ $quantidade_movimentacao = $resumo->contagemMovimentacao();
     </tbody>
 </table>
 
-
 <div class="resumo">
-    <h3>Resumo</h3>
+    <h2>Resumo</h2>
     <table>
-    <thead>
-        <tr>
-            <th>Container</th>
-            <th>Movimentacao</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><?php echo $quantidade_container ?></td>
-            <td><?php echo $quantidade_movimentacao ?></td>
-        </tr>
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th>Quantidade Container</th>
+                <th>Quantidade Movimentacao</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?php echo $quantidade_container ?></td>
+                <td><?php echo $quantidade_movimentacao ?></td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Quantidade Importação</th>
+                <th>Quantidade Exportação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?php echo $quantidade_importacao ?></td>
+                <td><?php echo $quantidade_exportacao?></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 

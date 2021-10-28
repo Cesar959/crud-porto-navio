@@ -334,6 +334,7 @@ header ul li a
     font-style: normal;
     font-weight: bold;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 /* Formatação Geral */
@@ -1781,6 +1782,11 @@ header ul li a
     .modal 
     {
         width: 240px;
+    }
+
+    .alerta-validacao 
+    {
+        font-size: 14px;
     }
 
     /* Formatação Geral */

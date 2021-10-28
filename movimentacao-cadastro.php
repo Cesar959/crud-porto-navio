@@ -26,12 +26,12 @@ if(isset($_POST['cadastro']))
         $cadastro = new Movimentacao();
 
         // Setando os atributos
-        $cadastro->__set("tipoMovimentacao",$tipoMovimentacao);
-        $cadastro->__set("dataInicio",$data_inicio);
-        $cadastro->__set("horaInicio",$hora_inicio);
-        $cadastro->__set("dataFim",$data_fim);
-        $cadastro->__set("horaFim",$hora_fim);
-    
+        $cadastro->tipoMovimentacao = $tipoMovimentacao;
+        $cadastro->dataInicio = $data_inicio;
+        $cadastro->horaInicio = $hora_inicio;
+        $cadastro->dataFim = $data_fim;
+        $cadastro->horaFim = $hora_fim;
+
         // Executando o método cadastro
         $cadastro->cadastro();
     }
@@ -44,7 +44,7 @@ if(isset($_POST['cadastro']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud - Container</title>
+    <title>Crud - Movimentacao</title>
 
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="resource/css/estilo.css">
@@ -69,7 +69,7 @@ if(isset($_POST['cadastro']))
         <?php include_once "include/menu.php" ?>
 
         <section class="painel">
-            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="">
+            <img src="resource/img/menu.png" class="botao-menu" onclick="menu()" alt="Botão Menu">
 
             <div class="conteudo-painel">
 
@@ -85,8 +85,8 @@ if(isset($_POST['cadastro']))
                             <option value="" selected>Selecione ...</option>
                             <option value="embarque">embarque</option>
                             <option value="descarga">descarga</option>
-                            <option value="gate	in">gate in</option>
-                            <option value="gate	out">gate out</option>
+                            <option value="gate-in">gate in</option>
+                            <option value="gate-out">gate out</option>
                             <option value="reposicionamento">reposicionamento</option>
                             <option value="pesagem">pesagem</option>
                             <option value="scanner">scanner</option>

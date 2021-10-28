@@ -17,14 +17,14 @@ class Sql extends \PDO
     // Construtor que inicia a conexâo com o banco de dados
     public function __construct()
     {
-        $this->conexao = new \PDO("mysql:host=$this->host;dbname=$this->banco", "$this->usuario", "$this->senha");
+        parent::__construct("mysql:host=$this->host;dbname=$this->banco", "$this->usuario", "$this->senha");
     }
 
     // Responsavel por Executar o comando passado por parametro no banco de dados
     public function executaComando($sql, $parametros = array())
     {
         // Preparando a instrução sql
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = $this->prepare($sql);
 
         // Trocando os parametros pelos valores
         foreach($parametros as $indice => $valor)
@@ -48,7 +48,7 @@ class Sql extends \PDO
     public function select($sql, $parametros = array())
     {
          // Preparando a instrução sql
-        $stmt = $this->conexao->prepare($sql);
+        $stmt = $this->prepare($sql);
 
          // Trocando os parametros pelos valores
         foreach($parametros as $indice => $valor)
