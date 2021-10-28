@@ -1,7 +1,7 @@
 <h1 align="center"> Crud de Porto de Navios </h1>
 
 <p align="center">
-    <img src="doc/resultado.png" alt="imagem-site" width="600" height="auto">
+    <img src="doc/resultado.jpg" alt="imagem-site" width="600" height="auto">
 </p>
 
 
