@@ -5,13 +5,13 @@
 </p>
 
 
-Projeto Crud (Create, Read, Update, Delete) para Porto de Navios.
+Projeto Crud (Create, Read, Update, Delete) para Porto de Navios, incluindo paginação de resultados, Campo de pesquisa e Exportação de PDF
 
 ## Descrição
 
-O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, ler e excluir registro de Containers e Movimentações no banco de dados com exportação de dados via PDF. Para isso foi utilizando o PHP para realizar execução de instruções SQL no banco de dados phpMyAdmin, além disso foi utilizado POO (Programação Orientada a Objetos), PDO (PHP Data Object) e DAO (Data Access Object) na construção das class. Na arquitetura do projeto foi utilizado a ideia do MVC (Model View Controller) para que assim as class ficassem separadas permitindo melhor manutenção do código e tambem a utilização do Composer para Geração de PDF e autoload das class. Na pasta DOC você encontra todo o planejamento do projeto como o desenho da modelagem do banco de dados, diagrama UML das class utilizadas e o próprio banco de dados exportado. 
+O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, ler e excluir registro de Containers e Movimentações no banco de dados com paginação de resultados, campo de pesquisa e exportação de dados via PDF. Para isso foi utilizando o PHP para realizar execução de instruções SQL no banco de dados phpMyAdmin, além disso foi utilizado POO (Programação Orientada a Objetos), PDO (PHP Data Object) e DAO (Data Access Object) na construção das class. Na arquitetura do projeto foi utilizado a ideia do MVC (Model View Controller) para que assim as class ficassem separadas permitindo melhor manutenção do código e tambem a utilização do Composer para Geração de PDF e autoload das class. Na pasta DOC você encontra todo o planejamento do projeto como o desenho da modelagem do banco de dados, diagrama UML das class utilizadas e o próprio banco de dados exportado. 
 
-## São requisitos funcionais da aplicaçào:
+## São requisitos funcionais da aplicação:
 
 ### Crud de Contêiner
 
@@ -19,16 +19,16 @@ O projeto é um crud de Porto de Navios aonde é possível cadastrar, alterar, l
 * Número do contêiner (4 letras e 7 números. Ex: TEST1234567)
 * Tipo: 20 / 40
 * Status: Cheio / Vazio
-* Categoria: Importaçào / Exportaçào
+* Categoria: Importação / Exportação
 
 ### Crud de Movimentações
 
-* Tipo	de	Movimentaçào	(embarque,	descarga,	gate	in,	gate	out, reposicionamento, pesagem, scanner)
+* Tipo	de	Movimentação	(embarque,	descarga,	gate	in,	gate	out, reposicionamento, pesagem, scanner)
 * Data e Hora do Início
 * Data e Hora do Fim
 
-### Relatório  com   o   total   de   movimentações   agrupadas   por   cliente   e   tipo  de movimentaçào.
-* No final do relatório deverá conter um sumário com o total de importaçào / exportação.
+### Relatório  com   o   total   de   movimentações   agrupadas   por   cliente   e   tipo  de movimentação.
+* No final do relatório deverá conter um sumário com o total de importação / exportação.
 
 
 
