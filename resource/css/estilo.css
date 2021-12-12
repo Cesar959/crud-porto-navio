@@ -73,6 +73,8 @@ header ul li a
     margin-left: 320px;
     background: transparent;
     transition: 0.5s;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .conteudo-painel
@@ -199,7 +201,8 @@ header ul li a
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%); 
     text-align: center;
     z-index: 5;
     width: 830px;
@@ -975,7 +978,6 @@ header ul li a
 
     .modal
     {
-        top: 40%;
         width: 730px;
         height: 400px;
     }
